@@ -4,7 +4,7 @@ namespace Catalog.Domain.Costumers.Entities
 {
     public class Address : Entity
     {
-        public Address(Guid id, string name, string zipCode, string city, string state, string country, string number, string street, string neighborhood, bool @default)
+        public Address(Guid id, string name, string zipCode, string city, string state, string country, string number, string street, string neighborhood, bool @default, Guid customerId)
         {
             Id = id;
             Name = name;
@@ -16,6 +16,7 @@ namespace Catalog.Domain.Costumers.Entities
             Street = street;
             Neighborhood = neighborhood;
             Default = @default;
+            CustomerId = customerId;
         }
 
         public string Name { get; private set; }
@@ -27,6 +28,7 @@ namespace Catalog.Domain.Costumers.Entities
         public string Street { get; private set; }
         public string Neighborhood { get; private set; }
         public bool Default { get; private set; }
+        public Guid CustomerId { get; private set; }
 
         public void SetDefault(bool @default) => Default = @default;
     }
